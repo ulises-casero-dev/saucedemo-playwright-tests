@@ -7,7 +7,7 @@ export class LoginPage {
     readonly URL = 'https://www.saucedemo.com/';
 
 
-    //Constructor
+    // Constructor
     constructor (page:Page) {
         this.page = page;
         this.loginButton = page.getByRole('button', {name: 'Login'});
