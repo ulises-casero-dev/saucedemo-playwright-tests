@@ -24,6 +24,13 @@ export class InventoryPage {
         await addToCartButton.click();
     }
 
+    async clickRemoveButton(productKey:string){
+        const dataTest = `[data-test="remove-sauce-labs-${productKey}"]`;
+        const removeFromCartButton = this.page.locator(dataTest);
+        
+        await removeFromCartButton.click();
+    }
+
     async badgeVisible(){
         await expect(this.cartBadge).toBeVisible();
     }
@@ -32,8 +39,8 @@ export class InventoryPage {
         await expect(this.cartBadge).toBeHidden();
     }
 
-    async verifyCartQuantity(cant:number){
-        // Comprobar cantidad de productos en el carrito
+    async verifyCartQuantity(cant:string){
+        await expect(this.page.locator(`[data-test="shopping-cart-badge"]`)).toHaveText(cant);
     }
 
 }

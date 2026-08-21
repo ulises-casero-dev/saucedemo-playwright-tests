@@ -9,7 +9,7 @@ test.describe('Login', () => {
         await loginPage.goto();
     })
     
-    test.only('Login with wrong credentials', async ({page}) => {
+    test('Login with wrong credentials', async ({page}) => {
         //Arrange
         const user = "wrong_user";
         const password = "wrong_pass";
